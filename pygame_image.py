@@ -28,6 +28,8 @@ def main():
             kk_rct.move_ip((-1,0)) #こうかとんの横座標を-1にする
         if key_lst[pg.K_RIGHT]: #右矢印キーがTrueなら
             kk_rct.move_ip((1,0)) #こうかとんの縦座標を1にする
+        else:
+            kk_rct.move_ip((-1,0))
         x = -(tmr%3200) #6
         screen.blit(bg_img, [x, 0]) #6
         screen.blit(bg2_img, [x+1600, 0]) #7-2
