@@ -20,16 +20,23 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed() #8-3
+
+        a = 0 #縦
+        b = 0 #横
+
         if key_lst[pg.K_UP]: #上矢印キーがTrueなら
-            kk_rct.move_ip((0,-1)) #こうかとんの縦座標を-1にする
+            a = -1 #こうかとんの縦座標を-1にする
         if key_lst[pg.K_DOWN]: #下矢印キーがTrueなら
-            kk_rct.move_ip((0,1)) #こうかとんの縦座標を1にする
+            a = 1 #こうかとんの縦座標を1にする
         if key_lst[pg.K_LEFT]: #左矢印キーがTrueなら
-            kk_rct.move_ip((-1,0)) #こうかとんの横座標を-1にする
+            b = -1 #こうかとんの横座標を-1にする
         if key_lst[pg.K_RIGHT]: #右矢印キーがTrueなら
-            kk_rct.move_ip((1,0)) #こうかとんの縦座標を1にする
+            b =  1 #こうかとんの縦座標を1にする
         else:
             kk_rct.move_ip((-1,0))
+
+        kk_rct.move_ip((b,a))
+
         x = -(tmr%3200) #6
         screen.blit(bg_img, [x, 0]) #6
         screen.blit(bg2_img, [x+1600, 0]) #7-2
