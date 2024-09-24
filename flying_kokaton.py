@@ -33,7 +33,7 @@ def main():
         if key_lst[pg.K_RIGHT]: #右矢印キーがTrueなら
             b =  1 #こうかとんの縦座標を1にする
         else:
-            kk_rct.move_ip((-1,0))
+            b = -1
 
         kk_rct.move_ip((b,a))
 
